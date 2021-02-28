@@ -7,6 +7,8 @@ private boolean[][] buffer; //2d array of booleans to store state of buttons arr
 private boolean running = true; //used to start and stop program
 
 public void setup () {
+  //noStroke();
+  stroke(255);
   size(1000, 800);
   frameRate(10);
   // make the manager
@@ -59,6 +61,12 @@ public void keyPressed() {
   if(key == 'd'){
     frameRate(8);
   }
+  if(key == 'f'){
+    frameRate(15);
+  }
+  if(key == 'g'){
+    frameRate(30);
+  }
 }
 
 public void copyFromBufferToButtons() {
@@ -104,7 +112,7 @@ public class Life {
   private int myRow, myCol;
   private float x, y, width, height;
   private boolean alive;
-
+  private int randColor = color((int)(Math.random()*155) +100,(int)(Math.random()*155) +100,(int)(Math.random()*155) +100);
   public Life (int row, int col) {
     width = 1000/NUM_COLS;
     height = 800/NUM_ROWS;
@@ -121,11 +129,15 @@ public class Life {
     alive = !alive; //turn cell on and off with mouse press
   }
   public void draw () {    
-    if (alive != true)
+    if (alive != true){
+      noStroke();
       fill(0);
-    else 
-    fill( 150 );
+    }
+    else {
+     stroke(0);
+    fill(204, 255, 255);
     rect(x, y, width, height);
+    }
   }
   public boolean getLife() {
     //replace the code one line below with your code
