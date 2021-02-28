@@ -59,12 +59,6 @@ public void keyPressed() {
   if(key == 'd'){
     frameRate(8);
   }
-  if(key == 'f'){
-    frameRate(15);
-  }
-  if(key == 'g'){
-    frameRate(30);
-  }
 }
 
 public void copyFromBufferToButtons() {
