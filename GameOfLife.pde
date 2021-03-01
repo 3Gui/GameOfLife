@@ -136,8 +136,9 @@ public class Life {
     else {
      stroke(0);
     fill(204, 255, 255);
-    rect(x, y, width, height);
     }
+    rect(x, y, width, height);
+    
   }
   public boolean getLife() {
     //replace the code one line below with your code
